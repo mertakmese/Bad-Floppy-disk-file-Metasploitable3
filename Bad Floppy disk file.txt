@@ -1,0 +1,24 @@
+Bad Floppy disk file error - Metasploitable3
+
+Exact Solution it worked:
+
+If vagrant plugin install vagrant-reload is not working follow the steps;
+
+1-metasploitable3-master>windows_2008_r2.json
+(Sometimes metasploitable3-master>packer>templates>windows_2008_r2.json )
+
+2-Open windows_2008_r2.json with Windows PowerShell ISE
+(if you dont know how to open PowerShell ISE - write to search Windows PowerShell ISE)
+
+3-After you open windows_2008_r2.json with Windows PowerShell ISE ,
+
+Note : Be careful slash ( \ and /)
+Edit lines
+.....
+.....
+216 "autounattend": "C:/Users/your-username/whatever-path-here/metasploitable3- master/packer/answer_files/2008_r2/Autounattend
+217 "scripts_dir": "C:/Users/your-username/whatever-path-here/metasploitable3-master/scripts",
+218 "resources_dir": "C:/Users/your-username/whatever-path-here/metasploitable3-master/resources",
+.....
+
+then cmd>vagrant plugin install vagrant-reload it worked
